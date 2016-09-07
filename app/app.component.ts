@@ -1,6 +1,16 @@
 import { Component } from '@angular/core';
+import { NgModel } from '@angular/forms';
+
+import {Hero} from './hero';
+
 @Component({
   selector: 'my-app',
-  template: '<h1>My First Angular 2 App</h1>'
+  templateUrl: './app/html/first.html',
+  directives: [NgModel]
 })
-export class AppComponent { }
+export class AppComponent {
+  hero: Hero = {
+    id:1, name: 'Test'
+  };
+}
+

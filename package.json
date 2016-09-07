@@ -30,7 +30,7 @@
     "zone.js": "^0.6.17",
     "angular2-in-memory-web-api": "0.0.18",
     "bootstrap": "^3.3.6",
-     "gulp": "github:gulpjs/gulp#4.0",
+    "gulp": "github:gulpjs/gulp#4.0",
     "gulp-audiosprite": "^1.0.3",
     "gulp-image": "^2.2.0",
     "gulp-rename": "^1.2.2",
