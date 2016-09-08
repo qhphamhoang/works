@@ -9,23 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var forms_1 = require('@angular/forms');
-var router_1 = require('@angular/router');
-var app_component_1 = require('./src/components/app.component');
-var app_routing_1 = require('./src/components/app.routing');
-var AppModule = (function () {
-    function AppModule() {
+var ExperimentsService = (function () {
+    function ExperimentsService() {
+        this.experiments = [
+            { name: 'Experiment 1', description: 'This is an experiment', completed: 0 },
+            { name: 'Experiment 2', description: 'This is an experiment', completed: 0 },
+            { name: 'Experiment 3', description: 'This is an experiment', completed: 0 },
+            { name: 'Experiment 4', description: 'This is an experiment', completed: 0 }
+        ];
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, router_1.RouterModule, app_routing_1.routing],
-            declarations: [app_component_1.AppComponent],
-            bootstrap: [app_component_1.AppComponent],
-            providers: [app_routing_1.appRoutingProviders]
-        }), 
+    ExperimentsService.prototype.getExperiments = function () {
+        return this.experiments;
+    };
+    ;
+    ExperimentsService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], ExperimentsService);
+    return ExperimentsService;
 }());
-exports.AppModule = AppModule;
+exports.ExperimentsService = ExperimentsService;

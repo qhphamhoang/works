@@ -9,23 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var forms_1 = require('@angular/forms');
-var router_1 = require('@angular/router');
-var app_component_1 = require('./src/components/app.component');
-var app_routing_1 = require('./src/components/app.routing');
-var AppModule = (function () {
-    function AppModule() {
+var state_service_1 = require('../common/state.service');
+var AboutComponent = (function () {
+    function AboutComponent(_stateService) {
+        this._stateService = _stateService;
+        this.title = 'About Page';
+        this.body = 'This is the about page body';
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, router_1.RouterModule, app_routing_1.routing],
-            declarations: [app_component_1.AppComponent],
-            bootstrap: [app_component_1.AppComponent],
-            providers: [app_routing_1.appRoutingProviders]
+    AboutComponent.prototype.ngOnInit = function () {
+        this.message = this._stateService.getMessage();
+    };
+    AboutComponent.prototype.updateMessage = function (m) {
+        this._stateService.setMessage(m);
+    };
+    AboutComponent = __decorate([
+        core_1.Component({
+            selector: 'about',
+            template: require('./about.component.html')
         }), 
-        __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+        __metadata('design:paramtypes', [state_service_1.StateService])
+    ], AboutComponent);
+    return AboutComponent;
 }());
-exports.AppModule = AppModule;
+exports.AboutComponent = AboutComponent;

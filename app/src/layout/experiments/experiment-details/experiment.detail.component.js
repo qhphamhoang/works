@@ -9,21 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var forms_1 = require('@angular/forms');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.hero = {
-            id: 1, name: 'Test'
-        };
+var ExperimentDetailComponent = (function () {
+    function ExperimentDetailComponent() {
     }
-    AppComponent = __decorate([
+    ExperimentDetailComponent.prototype.doExperiment = function () {
+        this.experiment.completed += 1;
+    };
+    ;
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], ExperimentDetailComponent.prototype, "experiment", void 0);
+    ExperimentDetailComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            templateUrl: './app/html/first.html',
-            directives: [forms_1.NgModel]
+            selector: 'experiment',
+            template: require('./experiment.detail.component.html'),
+            styles: ["\n    .experiment {\n      cursor: pointer;\n      outline: 1px lightgray solid;\n      padding: 5px;\n      margin: 5px;\n    }\n  "]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], ExperimentDetailComponent);
+    return ExperimentDetailComponent;
 }());
-exports.AppComponent = AppComponent;
+exports.ExperimentDetailComponent = ExperimentDetailComponent;

@@ -1,0 +1,8 @@
+<h1>Hello World</h1>
+<div><label>id: </label>{{hero.id}}</div>
+<div>
+    <label>name: </label>
+    <input [(ngModel)]="hero.name" placeholder="name"/>
+    <label>{{hero.name | uppercase}}</label>
+    <button (click)="hello()">TEST</button>
+</div>

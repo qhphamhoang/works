@@ -20,7 +20,9 @@
       "noImplicitAny": false,
       // Generates corresponding d.ts files
       "declaration": false,
-      "noLib": false
+      "noLib": false,
+      "watch": false
+
    },
    "compileOnSave": false,
    "buildOnSave": false,

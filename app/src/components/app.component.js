@@ -9,23 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var forms_1 = require('@angular/forms');
-var router_1 = require('@angular/router');
-var app_component_1 = require('./src/components/app.component');
-var app_routing_1 = require('./src/components/app.routing');
-var AppModule = (function () {
-    function AppModule() {
+var AppComponent = (function () {
+    function AppComponent() {
+        this.hero = {
+            id: 1, name: 'Test'
+        };
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, router_1.RouterModule, app_routing_1.routing],
-            declarations: [app_component_1.AppComponent],
-            bootstrap: [app_component_1.AppComponent],
-            providers: [app_routing_1.appRoutingProviders]
+    AppComponent.prototype.hello = function () {
+        this.hero.name = "hello";
+    };
+    AppComponent = __decorate([
+        core_1.Component({
+            selector: 'my-app',
+            templateUrl: '../app/src/layout/first.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], AppComponent);
+    return AppComponent;
 }());
-exports.AppModule = AppModule;
+exports.AppComponent = AppComponent;
